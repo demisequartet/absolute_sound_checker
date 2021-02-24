@@ -37,8 +37,15 @@ def playMusic(data):
     audio.terminate()
 
 
-def keyConvertToHz(num):
-    freq = [220, 233, 246, 261, 277, 293, 311, 329, 349, 369, 391, 415]
+def keyConvertToHz(num,octave,flag = False):
+    freq = np.array([220, 233, 246, 261, 277, 293, 311, 329, 349, 369, 391, 415])
+
+    freq = freq * octave
+
+    print(freq)
+
+    if flag:
+        print(str(freq[num]) + "を再生します")
 
     return freq[num]
 
